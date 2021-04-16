@@ -1,3 +1,21 @@
+О проекте:
+Создание учебного проекта на react и работа с firebase.
+Главная цель создать шаблон для web сайта на react + redux.
+
+Первый коммит - настройка проекта:
+1 Удаляем ненужное из src: Apptest.js, logo.svg, App.css
+   из public: все logo и в public создаём папку img
+2 Устанавливаем bootstrap
+  а) yarn add bootstrap@next
+  б) npm install jquery popper.js
+  в) в src/index.js прописать всё для bootstrap
+3 Переписываем App.js
+  Переписываем index.js
+4 Устанавливаем роутинг
+  yarn add react-router-dom
+5 Вносим изменения public/index.html
+6 Вносим изменения src/index.css
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
