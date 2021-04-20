@@ -16,6 +16,10 @@
 5 Вносим изменения public/index.html
 6 Вносим изменения src/index.css
 
+Второй коммит - создание главной страницы.
+А также navbar с поиском, footer и дополнительно карусель.
+Подключения Router в App.js 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

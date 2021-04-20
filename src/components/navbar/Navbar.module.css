@@ -1,0 +1,11 @@
+.link:hover {
+  opacity: 0.5;
+}
+
+.navbarTitle {
+  font-size: 24px;
+}
+
+.navbarTitle:hover {
+  opacity: 0.5;
+}

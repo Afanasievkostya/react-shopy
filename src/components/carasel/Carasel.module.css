@@ -1,0 +1,19 @@
+.Caracel {
+  padding-top: 30px;
+  padding-bottom: 120px;
+  background-color: #dfdfdf;
+}
+
+.titleCaracel {
+ margin-bottom: 50px;
+}
+
+.titleCaracel h1 {
+  color: #333;
+}
+
+.image {
+  margin: 0 auto;
+  max-width: 520px;
+  height: auto;
+}
