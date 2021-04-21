@@ -4,6 +4,8 @@ import Header from './containes/header/Header';
 import Main from './containes/main/Main';
 import {Footer} from './containes/footer/Footer';
 import {Product} from './pages/product/Product';
+import About from './pages/about/About';
+import Regitrant from './pages/regitrant/Regitrant';
 
 class App extends Component {
   render() {
@@ -13,6 +15,8 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/product" component={Product} />
+          <Route path="/about" component={About} />
+          <Route path="/Regitrant" component={Regitrant} />
           <Route render={() => <h1 style={{color: 'red', textAlign: 'center', paddingTop: '5rem', paddingBottom: '35rem'}}>404 not found</h1>} />
         </Switch>
         <Footer />

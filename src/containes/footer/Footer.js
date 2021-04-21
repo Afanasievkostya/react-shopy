@@ -6,7 +6,7 @@ export const Footer = () => (
   <div className={classes.Footer}>
      <div className="container">
         <div className="row">
-           <div className="logo col-md-9">
+           <div className="logo col-md-9" style={{marginBottom: '20px'}}>
               <NavLink exact to="/" className={classes.brand}>Shopy</NavLink>
            </div>
            <div className="nav-social col-md-3">

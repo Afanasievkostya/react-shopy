@@ -23,7 +23,8 @@ class Navbar extends Component {
   render() {
     const links = [
       {to: '/', label: 'главная', exact: true},
-      {to: '/product', label: 'товары', exact: false}
+      {to: '/product', label: 'товары', exact: false},
+      {to: '/about', label: 'личный кабинет', exact: false}
     ]
     return (
       <div className={classes.Navbar}>

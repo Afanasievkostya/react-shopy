@@ -1,0 +1,25 @@
+.About {
+  padding-top: 2rem;
+  padding-bottom: 20rem;
+}
+
+.About input {
+  margin-top: 10px;
+}
+
+.aboutForm {
+  margin-top: 40px;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #dfdfdf;
+}
+
+.toSubmit {
+  margin-top: 20px;
+}
+
+.registrat {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}

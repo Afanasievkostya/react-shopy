@@ -1,0 +1,19 @@
+.Regitrant {
+  padding-top: 2rem;
+  padding-bottom: 13rem;
+}
+
+.aboutForm {
+  margin-top: 40px;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #dfdfdf;
+}
+
+.toSubmit {
+  margin-top: 20px;
+}
+
+.Regitrant input {
+  margin-top: 10px;
+}

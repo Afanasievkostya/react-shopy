@@ -18,7 +18,14 @@
 
 Второй коммит - создание главной страницы.
 А также navbar с поиском, footer и дополнительно карусель.
-Подключения Router в App.js 
+Подключения Router в App.js
+
+Третий коммит - создание страницы авторизации и входа
+1 В components создаём элементы input и button
+2 В pages создаём элементы about и regitrant
+3 Для валидации в src создаём элемент form и в консоле.
+  Прописываем yarn add is_js валидация Imail (если выпадет ошибка в проекте, 
+  заново переустановить yarn add react-router-dom).
 
 # Getting Started with Create React App
 
