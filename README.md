@@ -24,8 +24,12 @@
 1 В components создаём элементы input и button
 2 В pages создаём элементы about и regitrant
 3 Для валидации в src создаём элемент form и в консоле.
-  Прописываем yarn add is_js валидация Imail (если выпадет ошибка в проекте, 
+  Прописываем yarn add is_js валидация Imail (если выпадет ошибка в проекте,
   заново переустановить yarn add react-router-dom).
+
+Четвёртый коммит - создание админки.
+1 В src создаём элементы admin.
+2 В components создаём элементы select.
 
 # Getting Started with Create React App
 

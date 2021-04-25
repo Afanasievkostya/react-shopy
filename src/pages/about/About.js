@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import classes from './About.module.css';
 import Input from '../../components/UI/input/Input';
 import Button from '../../components/UI/button/Button';
-import is from 'is_js'
+import is from 'is_js';
 
 class About extends Component {
   state = {

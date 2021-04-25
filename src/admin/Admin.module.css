@@ -1,0 +1,40 @@
+.Admin {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+
+.titleAdmin p {
+  font-size: 24px;
+}
+
+.titleAdmin span {
+  font-weight: bold;
+}
+
+.adminForm {
+  margin-top: 40px;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #dfdfdf;
+}
+
+.Admin label {
+  margin-bottom: 10px;
+}
+
+.fileInput,
+.name {
+  padding-top: 10px;
+  padding-bottom: 20px;
+ display: flex;
+ flex-direction: column;
+}
+
+.fileInput label,
+.name label {
+  font-weight: bold;
+}
+
+.fileInput input {
+  margin-bottom: 10px;
+}
