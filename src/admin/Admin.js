@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
-import classes from './Admin.module.css'
-import Input from '../components/UI/input/Input'
-import Button from '../components/UI/button/Button'
-import Select from '../components/UI/select/Select'
-import {createControl, validate, validateForm} from '../form/formFramework'
-
+import React, {Component} from 'react';
+import classes from './Admin.module.css';
+import Input from '../components/UI/input/Input';
+import Button from '../components/UI/button/Button';
+import Select from '../components/UI/select/Select';
+import {createControl, validate, validateForm} from '../form/formFramework';
+import axios from 'axios';
 
 function createFormControls() {
   return {
@@ -65,7 +65,7 @@ class Admin extends Component {
 
     const {title, price, connect} = this.state.formControls
 
-     const questionItem = {
+    const questionItem = {
       answers: [
         {image: this.fileInput.current.files[0].name},
         {name: 'Боря'},
@@ -74,9 +74,9 @@ class Admin extends Component {
         {text: connect.value},
         {rightAnswer: this.state.rightAnswer}
       ]
-     }
+    }
 
-     console.log(questionItem.answers)
+    this.state.user.push(questionItem)
 
     this.setState({
         user,
@@ -86,6 +86,7 @@ class Admin extends Component {
     })
 
     try {
+      axios.post('https://react-shopy-default-rtdb.firebaseio.com/productUser.json', this.state.user)
        this.setState({
          user: [],
          isFormValid: false,

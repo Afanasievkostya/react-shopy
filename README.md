@@ -31,6 +31,14 @@
 1 В src создаём элементы admin.
 2 В components создаём элементы select.
 
+Пятый коммит - настройка firebase.
+1 Установка npm i firebase
+2 firebase init
+3 Прописываем firebase в App.js, index.js
+4 Установка yarn add axios
+5 Настраиваем отправку формы в Admin.js
+6 Cоздаём и настраиваем product и productUser
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

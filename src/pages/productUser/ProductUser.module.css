@@ -1,0 +1,35 @@
+.productUser {
+  padding-top: 4rem;
+  padding-bottom: 20rem;
+}
+
+.productUserTitle {
+  text-align: center;
+}
+
+.productUserWrap {
+  padding-top: 40px;
+}
+
+.productUserElem {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.productUserImage {
+  margin: 0 auto;
+  max-width: 320px;
+  height: auto;
+}
+
+.productUseritem {
+  padding: 5px 0 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.productUserElem span {
+  margin-left: 5px;
+  font-weight: 400;
+  font-style: italic;
+}
