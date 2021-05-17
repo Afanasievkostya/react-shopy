@@ -5,6 +5,9 @@ import Input from '../../components/UI/input/Input';
 import Button from '../../components/UI/button/Button';
 import is from 'is_js';
 
+import {connect} from 'react-redux';
+import {about} from '../../store/actions/about';
+
 class About extends Component {
   state = {
     isFormValid: false,
@@ -147,4 +150,10 @@ class About extends Component {
   }
 }
 
-export default About;
+function mapDispatchToProps(dispatch) {
+  return {
+    about: (email, password) => dispatch(about(email, password))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(About)

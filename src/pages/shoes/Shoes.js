@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Card from '../../components/card/Card';
-import classes from './Product.module.css';
+import classes from './Shoes.module.css';
 import Fieldset from '../../components/fieldset/Fieldset';
 import axios from 'axios';
 
-class Product extends Component {
+class Shoes extends Component {
 
   state = {
     productUser: []
@@ -33,32 +33,42 @@ class Product extends Component {
      }
   }
 
-  render() {
+  renderProductShoe() {
     const productUser = this.state.productUser
+    return productUser.map(product => {
+      const shoe = this.state.cods[product.id][0]['answers'][5]['rightAnswer']
+      if(shoe === 'Обувь') {
+        return (
+          <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5" key={product.id}>
+            <Card id={product.id} index={product.index}
+            image={this.state.cods[product.id][0]['answers'][0]['image']} name={this.state.cods[product.id][0]['answers'][1]['name']}
+            rightAnswer = {this.state.cods[product.id][0]['answers'][5]['rightAnswer']}
+            />
+          </div>
+        )
+      }else {
+        return (
+          console.log()
+        )
+      }
+    })
+  }
+
+  render() {
     return (
-        <div className={classes.product}>
+        <div className={classes.shoes}>
           <div className="container">
             <div className={classes.headerTitle}>
-              <h1>Спорт товары</h1>
-              <p>Страница с товарами пользователей</p>
+              <h1>Обувь</h1>
             </div>
 
             <div className="row">
             <div className="col-sm-4 col-md-3 col-lg-2">
-              <Fieldset />
+                <Fieldset />
             </div>
             <div className="col-sm-8 col-md-9 col-lg-10">
             <div className="row" style={{marginTop: '60px'}}>
-              {productUser.map(product => {
-                return (
-                  <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5" key={product.id}>
-                    <Card id={product.id} index={product.index}
-                    image={this.state.cods[product.id][0]['answers'][0]['image']} name={this.state.cods[product.id][0]['answers'][1]['name']}
-                    rightAnswer = {this.state.cods[product.id][0]['answers'][5]['rightAnswer']}
-                    />
-                  </div>
-                )
-              })}
+              { this.renderProductShoe() }
             </div>
             </div>
             </div>
@@ -69,4 +79,4 @@ class Product extends Component {
   }
 }
 
-export default Product
+export default Shoes

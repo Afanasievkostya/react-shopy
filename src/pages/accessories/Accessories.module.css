@@ -1,0 +1,13 @@
+.accessories {
+  padding-top: 2rem;
+  padding-bottom: 12rem;
+}
+
+.headerTitle {
+  text-align: center;
+}
+
+.headerTitle p {
+  font-size: 24px;
+  font-weight: 600;
+}

@@ -3,6 +3,7 @@ import classes from './Regitrant.module.css';
 import Input from '../../components/UI/input/Input';
 import Button from '../../components/UI/button/Button';
 import is from 'is_js';
+import axios from 'axios';
 
 class Regitrant extends Component {
   state = {
@@ -47,14 +48,22 @@ class Regitrant extends Component {
     }
   }
 
-  registerHandler = () => {
-    this.props.regitrant(
-      this.state.formControls.displayName.value,
-      this.state.formControls.email.value,
-      this.state.formControls.password.value,
-      false
-    )
+  registerHandler = async () => {
 
+    const authData = {
+     displayName: this.state.formControls.displayName.value,
+     email: this.state.formControls.email.value,
+     password: this.state.formControls.password.value,
+     returnSecureToken: true
+    }
+
+    try {
+     await axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCvN3kB8wcdzr1vtGXy_6o0ISa78cOwecw', authData)
+    } catch (e) {
+     console.log(e)
+    }
+
+    window.location.assign('/about')
   }
 
   submitHandler = event => {

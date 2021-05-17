@@ -37,7 +37,19 @@
 3 Прописываем firebase в App.js, index.js
 4 Установка yarn add axios
 5 Настраиваем отправку формы в Admin.js
+  a) Из firebase берём ссылки для создания и проверки пользователя.
+  б) Создаём страницы about, regitrant
 6 Cоздаём и настраиваем product и productUser
+
+Шестой коммит - настройка admin.
+1 Устанавливаем redux.
+ а) yarn add redux
+ б) yarn add react-redux. связующая библиотека
+ в) yarn add redux-thunk. асинхронная работа с redux
+2 Cоздаём store и работаем с redux только в Adout.js
+3 Cоздаём logout
+4 Изменяем App.js для показа Admin
+5 Cоздаём страницы shoes, clothes, accessories
 
 # Getting Started with Create React App
 

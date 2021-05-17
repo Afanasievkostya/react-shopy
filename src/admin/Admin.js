@@ -5,6 +5,7 @@ import Button from '../components/UI/button/Button';
 import Select from '../components/UI/select/Select';
 import {createControl, validate, validateForm} from '../form/formFramework';
 import axios from 'axios';
+import {connect} from 'react-redux'
 
 function createFormControls() {
   return {
@@ -54,7 +55,7 @@ class Admin extends Component {
   state = {
     user: [],
     isFormValid: false,
-    rightAnswer: 'обувь',
+    rightAnswer: 'Обувь',
     formControls: createFormControls()
   }
 
@@ -68,7 +69,7 @@ class Admin extends Component {
     const questionItem = {
       answers: [
         {image: this.fileInput.current.files[0].name},
-        {name: 'Боря'},
+        {name: this.props.name},
         {text: title.value},
         {text: price.value},
         {text: connect.value},
@@ -81,7 +82,7 @@ class Admin extends Component {
     this.setState({
         user,
         isFormValid: false,
-        rightAnswer: 'обувь',
+        rightAnswer: 'Обувь',
         formControls: createFormControls()
     })
 
@@ -90,7 +91,7 @@ class Admin extends Component {
        this.setState({
          user: [],
          isFormValid: false,
-         rightAnswer: 'обувь',
+         rightAnswer: 'Обувь',
          formControls: createFormControls()
        })
     } catch(e) {
@@ -153,7 +154,7 @@ class Admin extends Component {
       options={[
         {text: 'Обувь', value: 'Обувь'},
         {text: 'Одежда', value: 'Одежда'},
-        {text: 'Акксесуары', value: 'Акксесуары'}
+        {text: 'Аксессуары', value: 'Аксессуары'}
       ]}
     />
 
@@ -183,7 +184,7 @@ class Admin extends Component {
                 className="form-control"
                 id={htmlFor}
                 type="text"
-                placeholder='Боря'
+                placeholder={this.props.name}
                 />
               </div>
               { this.renderInputs() }
@@ -202,4 +203,11 @@ class Admin extends Component {
   }
 }
 
-export default Admin
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: !!state.about.token,
+    name: state.about.userName
+  }
+}
+
+export default connect(mapStateToProps)(Admin)

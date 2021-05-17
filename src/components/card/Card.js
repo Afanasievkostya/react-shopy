@@ -7,14 +7,16 @@ import classes from './Card.module.css';
 class Card extends Component {
   render() {
     return (
-      <div className="card">
-        <div className={classes.wrapImage}>
-          <img src={'../../img/' + this.props.image} className="card-img-top" alt="" />
-        </div>
-        <div className="card-body">
-          <h5 className={classes.cardTitle}>Имя продовца: <strong>{this.props.name}</strong></h5>
-          <h5 className={classes.cardTitle}>Категория товара: <strong>{this.props.rightAnswer}</strong></h5>
-          <Link to={'/product/' + this.props.id + '/' + this.props.index} className="btn btn-primary">Открыть</Link>
+      <div className={classes.wrapCard}>
+        <div className="card">
+          <div className={classes.wrapImage}>
+            <img src={'../../img/' + this.props.image} className="card-img-top" alt="" />
+          </div>
+          <div className="card-body">
+            <h5 className={classes.cardTitle}>Имя продовца: <strong>{this.props.name}</strong></h5>
+            <h5 className={classes.cardTitle}>Категория товара: <strong>{this.props.rightAnswer}</strong></h5>
+            <Link to={'/product/' + this.props.id + '/' + this.props.index} className="btn btn-primary" style={{marginTop: '10px'}}>Открыть</Link>
+          </div>
         </div>
       </div>
     )

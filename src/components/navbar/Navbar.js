@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import {Search} from '../Search';
 import classes from './Navbar.module.css';
+import {connect} from 'react-redux'
 
 class Navbar extends Component {
   renderLinks(links) {
@@ -24,8 +25,18 @@ class Navbar extends Component {
     const links = [
       {to: '/', label: 'главная', exact: true},
       {to: '/product', label: 'товары', exact: false},
-      {to: '/about', label: 'личный кабинет', exact: false}
     ]
+
+    const adminName = this.props.name
+
+    if (this.props.isAuthenticated) {
+      links.push({to: '/admin', label: adminName, exact: false})
+      links.push({to: '/logout', label: '( Выйти )', exact: false})
+
+    }else {
+      links.push({to: '/about', label: 'вход', exact: true})
+    }
+
     return (
       <div className={classes.Navbar}>
          <nav className="navbar navbar-expand-lg navbar-dark " style={{backgroundColor: '#734f69'}}>
@@ -49,5 +60,12 @@ class Navbar extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: !!state.about.token,
+    name: state.about.userName
+  }
+}
 
-export default Navbar;
+
+export default connect(mapStateToProps)(Navbar);

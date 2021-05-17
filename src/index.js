@@ -8,7 +8,13 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+
 import firebase from 'firebase';
+
+import {createStore, compose, applyMiddleware} from 'redux'
+import {Provider} from 'react-redux'
+import rootReducer from './store/reducers/rootReducer'
+import thunk from 'redux-thunk'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCvN3kB8wcdzr1vtGXy_6o0ISa78cOwecw",
@@ -23,10 +29,25 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    }) : compose;
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(
+    applyMiddleware(thunk)
+  )
+)
+
 const app = (
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+  </Provider>
 )
 
 ReactDOM.render(app, document.getElementById('root'))
