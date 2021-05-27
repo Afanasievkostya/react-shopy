@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from '../../components/card/Card';
 import classes from './Clothes.module.css';
 import Fieldset from '../../components/fieldset/Fieldset';
-import axios from 'axios';
+import axios from '../../axios/axios-firebase';
 
 class Clothes extends Component {
 
@@ -12,7 +12,7 @@ class Clothes extends Component {
 
   async componentDidMount() {
     try {
-      const response = await axios.get('https://react-shopy-default-rtdb.firebaseio.com/productUser.json')
+      const response = await axios.get('/productUser.json')
 
       const productUser = this.state.productUser
 
@@ -36,13 +36,13 @@ class Clothes extends Component {
   renderProductClothe() {
     const productUser = this.state.productUser
     return productUser.map(product => {
-      const clothe = this.state.cods[product.id][0]['answers'][5]['rightAnswer']
+      const clothe = this.state.cods[product.id][0]['answers'][6]['rightAnswer']
       if(clothe === 'Одежда') {
         return (
           <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5" key={product.id}>
             <Card id={product.id} index={product.index}
             image={this.state.cods[product.id][0]['answers'][0]['image']} name={this.state.cods[product.id][0]['answers'][1]['name']}
-            rightAnswer = {this.state.cods[product.id][0]['answers'][5]['rightAnswer']}
+            rightAnswer = {this.state.cods[product.id][0]['answers'][6]['rightAnswer']}
             />
           </div>
         )

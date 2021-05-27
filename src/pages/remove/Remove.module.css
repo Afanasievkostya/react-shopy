@@ -1,0 +1,25 @@
+.remove {
+  padding-top: 2rem;
+  padding-bottom: 12rem;
+}
+
+.headerTitle {
+  text-align: center;
+}
+
+.headerTitle span {
+  font-weight: bold;
+}
+
+.headerTitle p {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.wrapTable {
+  margin-top: 60px;
+}
+
+.remove nav {
+  margin-top: 40px;
+}

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {ABOUT_LOGOUT, ABOUT_SUCCESS, ABOUT_NAME} from './actionTypes';
+import {ABOUT_LOGOUT, ABOUT_SUCCESS, ABOUT_NAME, ABOUT_EMAIL} from './actionTypes';
 
 export function about(email, password) {
   return async dispatch => {
@@ -16,11 +16,13 @@ export function about(email, password) {
     const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
 
     localStorage.setItem('userName', data.displayName)
+    localStorage.setItem('userEmail', data.email)
     localStorage.setItem('token', data.idToken)
     localStorage.setItem('userId', data.localId)
     localStorage.setItem('expirationDate', expirationDate)
 
     dispatch(aboutName(data.displayName))
+    dispatch(aboutEmail(data.email))
     dispatch(aboutSuccess(data.idToken))
     dispatch(autoLogout(data.expiresIn))
   }
@@ -72,5 +74,12 @@ export function aboutName(userName) {
   return {
     type: ABOUT_NAME,
     userName
+  }
+}
+
+export function aboutEmail(userEmail) {
+  return {
+    type: ABOUT_EMAIL,
+    userEmail
   }
 }

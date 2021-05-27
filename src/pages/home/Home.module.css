@@ -1,8 +1,5 @@
 .home {
   height: 100%;
-	position: relative;
-	background: url("../../backgroundImg/Layer.png") no-repeat center;
-	background-size: cover;
   background-color: #dfdfdf;
 }
 

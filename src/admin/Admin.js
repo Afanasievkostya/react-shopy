@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import classes from './Admin.module.css';
+import {Link} from 'react-router-dom';
 import Input from '../components/UI/input/Input';
 import Button from '../components/UI/button/Button';
 import Select from '../components/UI/select/Select';
 import {createControl, validate, validateForm} from '../form/formFramework';
 import axios from 'axios';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 function createFormControls() {
   return {
@@ -70,6 +71,7 @@ class Admin extends Component {
       answers: [
         {image: this.fileInput.current.files[0].name},
         {name: this.props.name},
+        {email: this.props.email},
         {text: title.value},
         {text: price.value},
         {text: connect.value},
@@ -165,6 +167,12 @@ class Admin extends Component {
               <h1>Личный кабинет</h1>
               <p>Добро пожаловать <span>{this.props.name}</span></p>
             </div>
+            <nav aria-label="breadcrumb">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item active" aria-current="page">Личный кабинет</li>
+                <li className="breadcrumb-item"><Link to={'/remove'}>Редактирование</Link></li>
+              </ol>
+            </nav>
             <form
              onSubmit={this.submitHandler}
              className={classes.adminForm}
@@ -185,6 +193,17 @@ class Admin extends Component {
                 id={htmlFor}
                 type="text"
                 placeholder={this.props.name}
+                disabled
+                />
+              </div>
+              <div className={classes.name}>
+                <label htmlFor={htmlFor}>Ваш Email:</label>
+                <input
+                className="form-control"
+                id={htmlFor}
+                type="text"
+                placeholder={this.props.email}
+                disabled
                 />
               </div>
               { this.renderInputs() }
@@ -206,7 +225,8 @@ class Admin extends Component {
 function mapStateToProps(state) {
   return {
     isAuthenticated: !!state.about.token,
-    name: state.about.userName
+    name: state.about.userName,
+    email: state.about.userEmail
   }
 }
 

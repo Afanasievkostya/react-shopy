@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from '../../components/card/Card';
 import classes from './Accessories.module.css';
 import Fieldset from '../../components/fieldset/Fieldset';
-import axios from 'axios';
+import axios from '../../axios/axios-firebase';
 // import firebase from 'firebase';
 
 class Accessories extends Component {
@@ -25,7 +25,7 @@ class Accessories extends Component {
     // });
 
     try {
-      const response = await axios.get('https://react-shopy-default-rtdb.firebaseio.com/productUser.json')
+      const response = await axios.get('/productUser.json')
 
       const productUser = this.state.productUser
 
@@ -49,13 +49,13 @@ class Accessories extends Component {
   renderProductAccessor() {
     const productUser = this.state.productUser
     return productUser.map(product => {
-      const accessor = this.state.cods[product.id][0]['answers'][5]['rightAnswer']
+      const accessor = this.state.cods[product.id][0]['answers'][6]['rightAnswer']
       if (accessor === 'Аксессуары') {
         return (
           <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5" key={product.id}>
             <Card id={product.id} index={product.index}
             image={this.state.cods[product.id][0]['answers'][0]['image']} name={this.state.cods[product.id][0]['answers'][1]['name']}
-            rightAnswer = {this.state.cods[product.id][0]['answers'][5]['rightAnswer']}
+            rightAnswer = {this.state.cods[product.id][0]['answers'][6]['rightAnswer']}
             />
           </div>
         )
@@ -76,16 +76,15 @@ class Accessories extends Component {
             <div className={classes.headerTitle}>
               <h1>Аксессуары</h1>
             </div>
-
             <div className="row">
-            <div className="col-sm-4 col-md-3 col-lg-2">
-              <Fieldset />
-            </div>
-            <div className="col-sm-8 col-md-9 col-lg-10">
-            <div className="row" style={{marginTop: '60px'}}>
-              { this.renderProductAccessor() }
-            </div>
-            </div>
+              <div className="col-sm-4 col-md-3 col-lg-2">
+                <Fieldset />
+              </div>
+              <div className="col-sm-8 col-md-9 col-lg-10">
+                <div className="row" style={{marginTop: '60px'}}>
+                  { this.renderProductAccessor() }
+                </div>
+              </div>
             </div>
 
           </div>

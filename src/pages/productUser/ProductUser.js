@@ -19,9 +19,10 @@ class ProductUser extends Component {
         product,
         image: product[0]['answers'][0]['image'],
         name: product[0]['answers'][1]['name'],
-        title: product[0]['answers'][2]['text'],
-        price: product[0]['answers'][3]['text'],
-        text: product[0]['answers'][4]['text']
+        email: product[0]['answers'][2]['email'],
+        title: product[0]['answers'][3]['text'],
+        price: product[0]['answers'][4]['text'],
+        text: product[0]['answers'][5]['text']
       })
 
   } catch(e) {
@@ -30,10 +31,11 @@ class ProductUser extends Component {
 }
 
   render() {
-    
+
     const image = this.state.image
     const title = this.state.title
     const name = this.state.name
+    const email = this.state.email
     const price = this.state.price
     const text = this.state.text
 
@@ -54,6 +56,7 @@ class ProductUser extends Component {
                 <ul className={classes.productUserElem}>
                   <li className={classes.productUseritem}>Название товара: <span>{title}</span></li>
                   <li className={classes.productUseritem}>Имя продовца: <span>{name}</span></li>
+                  <li className={classes.productUseritem}>Email: <span>{email}</span></li>
                   <li className={classes.productUseritem}>Описание товара и связь: <span>{text}</span></li>
                   <li className={classes.productUseritem}>Цена: <span>{price}р</span></li>
                 </ul>

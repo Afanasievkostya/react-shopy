@@ -11,6 +11,7 @@ import Admin from './admin/Admin';
 import Accessories from './pages/accessories/Accessories';
 import Clothes from './pages/clothes/Clothes';
 import Shoes from './pages/shoes/Shoes';
+import Remove from './pages/remove/Remove';
 //eslint-disable-next-line no-unused-vars
 import firebase from 'firebase';
 
@@ -49,6 +50,7 @@ class App extends Component {
         <Route path="/accessories" component={Accessories} />
         <Route path="/clothes" component={Clothes} />
         <Route path="/shoes" component={Shoes} />
+        <Route path="/remove" component={Remove} />
         <Route path="/admin" component={Admin} />
         <Route path="/logout" component={Logout} />
         <Redirect to="/" />
