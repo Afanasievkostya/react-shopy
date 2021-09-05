@@ -51,6 +51,13 @@
 4 Изменяем App.js для показа Admin
 5 Cоздаём страницы shoes, clothes, accessories
 
+Седьмой коммит - редактор в admin.
+
+Восьмой коммит - конец
+1 Объединяем в один скрипт командой yarn run build.
+2 Создаём Hosting в проекте на сайте firebase.
+3 Получаем ссылку на сайт - https://react-shopy.firebaseapp.com
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
