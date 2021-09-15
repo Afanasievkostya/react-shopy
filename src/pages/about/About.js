@@ -118,7 +118,7 @@ class About extends Component {
     return (
         <div className={classes.About}>
           <div className="container">
-            <div className="titleAbout" style={{textAlign: 'center'}}>
+            <div className={classes.titleAbout} style={{textAlign: 'center'}}>
               <h1>Авторизация</h1>
             </div>
             <form

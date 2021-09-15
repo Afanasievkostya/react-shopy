@@ -36,19 +36,18 @@ class Product extends Component {
   render() {
     const productUser = this.state.productUser
     return (
+      <div className="container">
         <div className={classes.product}>
-          <div className="container">
             <div className={classes.headerTitle}>
               <h1>Спорт товары</h1>
               <p>Страница с товарами пользователей</p>
             </div>
-
             <div className="row">
               <div className="col-sm-4 col-md-3 col-lg-2">
                 <Fieldset />
               </div>
               <div className="col-sm-8 col-md-9 col-lg-10">
-                <div className="row" style={{marginTop: '60px'}}>
+                <div className="row" style={{marginTop: '40px'}}>
                   {
                     productUser.map(product => {
                       return (

@@ -4,11 +4,11 @@
 }
 
 .headerTitle {
-  padding-top: 15rem;
+  padding-top: 6rem;
 }
 
 .home h1 {
-  font-size: 72px;
+  font-size: 52px;
   text-align: center;
   color: #fff;
 }
@@ -19,3 +19,25 @@
   font-size: 18px;
   color: #fff;
 }
+
+@media (min-width: 576px) {
+  .headerTitle {
+    padding-top: 15rem;
+  }
+  .home h1 {
+    font-size: 72px;
+  }
+
+  .home p {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}

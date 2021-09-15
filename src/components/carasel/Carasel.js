@@ -8,11 +8,6 @@ const Caracel = () => {
       <h1>Товары для спорта</h1>
     </div>
        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-          <ol className="carousel-indicators" style={{top: '33rem'}}>
-             <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" style={{backgroundColor: '#000'}}></li>
-             <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" style={{backgroundColor: '#000'}}></li>
-             <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" style={{backgroundColor: '#000'}}></li>
-          </ol>
           <div className="carousel-inner">
              <div className="carousel-item active">
                   <div className={classes.image}>

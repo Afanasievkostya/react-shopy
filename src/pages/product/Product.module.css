@@ -1,13 +1,33 @@
 .product {
   padding-top: 2rem;
-  padding-bottom: 12rem;
+  padding-bottom: 2rem;
 }
 
 .headerTitle {
   text-align: center;
 }
 
+.headerTitle h1 {
+  font-size: 32px;
+}
+
 .headerTitle p {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
+}
+
+@media (min-width: 576px) {
+  .product {
+    padding-top: 2rem;
+    padding-bottom: 12rem;
+  }
+
+  .headerTitle h1 {
+    font-size: 52px;
+  }
+
+  .headerTitle p {
+    font-size: 24px;
+    font-weight: 600;
+  }
 }

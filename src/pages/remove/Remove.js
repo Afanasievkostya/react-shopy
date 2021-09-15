@@ -38,8 +38,8 @@ class Remove extends Component {
   render() {
     const productUser = this.state.productUser
     return (
+      <div className="container">
       <div className={classes.remove}>
-        <div className="container">
           <div className={classes.headerTitle}>
             <h1>Редактирование</h1>
             <p>Добро пожаловать <span>{this.props.name}</span></p>
@@ -71,7 +71,7 @@ class Remove extends Component {
 
                     return (
                         <Table id={product.id} index={product.index} key={product.id}
-                        image={this.state.cods[product.id][0]['answers'][0]['image']} name={this.state.cods[product.id][0]['answers'][1]['name']}
+                        name={this.state.cods[product.id][0]['answers'][1]['name']}
                         email={this.state.cods[product.id][0]['answers'][2]['email']}
                         title={this.state.cods[product.id][0]['answers'][3]['text']}
                         rightAnswer={this.state.cods[product.id][0]['answers'][6]['rightAnswer']}
@@ -96,6 +96,52 @@ class Remove extends Component {
               }
               </table>
           </div>
+          <div className={classes.wrapTableTwo}>
+            <table className="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Название товара</th>
+                  <th scope="col">Категории</th>
+                  <th scope="col">Удалить</th>
+                </tr>
+              </thead>
+            {
+              productUser.map(product => {
+                const emailUser = this.state.cods[product.id][0]['answers'][2]['email']
+
+                if (emailUser === this.props.email) {
+
+                  return (
+                      <tbody className={classes.tbody} key={this.props.id}>
+                        <tr>
+
+                          <td>{product.index}</td>
+                          <td>{this.state.cods[product.id][0]['answers'][3]['text']}</td>
+                          <td>{this.state.cods[product.id][0]['answers'][6]['rightAnswer']}</td>
+                          <td><p onClick={
+                            this.deleteHandler = () => {
+                              axios.delete('/productUser/' + product.id + '.json')
+                              .then(function(response){
+                                console.log(response.data)
+                              })
+                              .catch(function(error) {
+                                console.error(error)
+                              })
+                            }
+                          }>delete</p></td>
+                        </tr>
+                      </tbody>
+                  )
+                }else {
+                  return (
+                    console.log()
+                  )
+                }
+              })
+            }
+            </table>
+        </div>
         </div>
       </div>
     )
@@ -104,6 +150,7 @@ class Remove extends Component {
 
 function mapStateToProps(state) {
   return {
+    name: state.about.userName,
     email: state.about.userEmail
   }
 }

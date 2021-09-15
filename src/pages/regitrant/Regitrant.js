@@ -137,7 +137,7 @@ class Regitrant extends Component {
 
         <div className={classes.Regitrant}>
           <div className="container">
-            <div className="titleAbout" style={{textAlign: 'center'}}>
+            <div className={classes.titleAbout} style={{textAlign: 'center'}}>
               <h1>Регистрация</h1>
             </div>
             <form

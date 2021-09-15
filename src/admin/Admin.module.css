@@ -1,10 +1,14 @@
 .Admin {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.titleAdmin h1 {
+  font-size: 32px;
 }
 
 .titleAdmin p {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .titleAdmin span {
@@ -37,4 +41,19 @@
 
 .fileInput input {
   margin-bottom: 10px;
+}
+
+@media (min-width: 576px) {
+  .Admin {
+    padding-top: 2rem;
+    padding-bottom: 12rem;
+  }
+
+  .titleAdmin h1 {
+    font-size: 52px;
+  }
+
+  .titleAdmin p {
+    font-size: 24px;
+  }
 }

@@ -1,6 +1,10 @@
 .Regitrant {
   padding-top: 2rem;
-  padding-bottom: 13rem;
+  padding-bottom: 2rem;
+}
+
+.titleAbout h1 {
+  font-size: 32px;
 }
 
 .aboutForm {
@@ -16,4 +20,14 @@
 
 .Regitrant input {
   margin-top: 10px;
+}
+
+@media (min-width: 576px) {
+  .Regitrant {
+    padding-bottom: 10rem;
+  }
+
+  .titleAbout h1 {
+    font-size: 52px;
+  }
 }

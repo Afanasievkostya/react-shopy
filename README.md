@@ -58,6 +58,8 @@
 2 Создаём Hosting в проекте на сайте firebase.
 3 Получаем ссылку на сайт - https://react-shopy.firebaseapp.com
 
+Девятый коммит - исправления стилей.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

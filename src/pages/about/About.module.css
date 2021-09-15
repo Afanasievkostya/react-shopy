@@ -1,10 +1,14 @@
 .About {
   padding-top: 2rem;
-  padding-bottom: 20rem;
+  padding-bottom: 2rem;
 }
 
 .About input {
   margin-top: 10px;
+}
+
+.titleAbout h1 {
+  font-size: 32px;
 }
 
 .aboutForm {
@@ -22,4 +26,14 @@
   margin-left: 20px;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  .About {
+    padding-bottom: 15rem;
+  }
+
+  .titleAbout h1 {
+    font-size: 52px;
+  }
 }

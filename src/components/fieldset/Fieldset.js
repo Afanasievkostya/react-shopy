@@ -7,7 +7,7 @@ import classes from './Fieldset.module.css';
 class Fieldset extends Component {
   render() {
     return (
-      <fieldset className={classes.links} style={{marginTop: '60px'}}>
+      <fieldset className={classes.links} style={{marginTop: '40px'}}>
         <legend>Категории:</legend>
           <ul>
             <li><Link to="/product">Все</Link></li>

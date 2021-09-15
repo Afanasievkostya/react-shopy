@@ -40,12 +40,11 @@ class ProductUser extends Component {
     const text = this.state.text
 
     return (
-      <div className={classes.productUser}>
-        <div className="container">
+      <div className="container">
+        <div className={classes.productUser}>
           <div className={classes.productUserTitle}>
             <h1>Просмотр товара</h1>
           </div>
-          <div className={classes.productUserWrap}>
             <div className="row">
               <div className="col-sm-5">
                 <div className={classes.productUserImage}>
@@ -64,7 +63,6 @@ class ProductUser extends Component {
             </div>
           </div>
         </div>
-      </div>
     )
   }
 }

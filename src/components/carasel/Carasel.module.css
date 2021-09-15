@@ -1,14 +1,15 @@
 .Caracel {
   padding-top: 30px;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
   background-color: #dfdfdf;
 }
 
 .titleCaracel {
- margin-bottom: 50px;
+ margin-bottom: 20px;
 }
 
 .titleCaracel h1 {
+  font-size: 28px;
   color: #333;
 }
 
@@ -17,3 +18,27 @@
   max-width: 520px;
   height: auto;
 }
+
+
+@media (min-width: 576px) {
+  .Caracel {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  .titleCaracel {
+   margin-bottom: 60px;
+  }
+
+  .titleCaracel h1 {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}

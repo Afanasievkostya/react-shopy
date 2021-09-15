@@ -1,10 +1,14 @@
 .remove {
   padding-top: 2rem;
-  padding-bottom: 12rem;
+  padding-bottom: 2rem;
 }
 
 .headerTitle {
   text-align: center;
+}
+
+.headerTitle h1 {
+  font-size: 32px;
 }
 
 .headerTitle span {
@@ -22,4 +26,49 @@
 
 .remove nav {
   margin-top: 40px;
+}
+
+tbody p {
+  font-weight: bold;
+  color: #666;
+}
+
+.tbody p:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.wrapTable {
+  display: none;
+}
+
+.wrapTableTwo {
+  display: block;
+}
+
+
+
+@media (min-width: 576px) {
+  .remove {
+    padding-top: 2rem;
+    padding-bottom: 12rem;
+  }
+
+  .headerTitle h1 {
+    font-size: 52px;
+  }
+
+  .titleAdmin p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapTableTwo {
+    display: none;
+  }
+
+  .wrapTable {
+    display: block;
+  }
 }
